@@ -3,24 +3,21 @@
 import { ModeToglge } from "./mode-toggle";
 
 export const Header = () => {
+  const scrollToTop = () => {
+    const heroSection = document.getElementById("hero");
+    if (heroSection) {
+      heroSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <header className="flex items-center justify-between px-6 py-4 shadow-md">
-      <div className="text-lg font-bold">
-        <a href="/">Izaak Sarnecki</a>
+    <header className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 shadow-md bg-inherit">
+      <div
+        className="text-lg md:text-2xl font-bold cursor-pointer"
+        onClick={scrollToTop}
+      >
+        Izaak Sarnecki
       </div>
-
-      <nav className=" justify-between space-x-8 text-lg">
-        <a className="nav-link" href="/projects">
-          Projects
-        </a>
-        <a className="nav-link" href="/about">
-          About
-        </a>
-        <a className="nav-link" href="/contact">
-          Contact
-        </a>
-      </nav>
-
       <ModeToglge />
     </header>
   );
