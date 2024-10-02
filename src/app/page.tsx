@@ -1,9 +1,12 @@
-import { ModeToglge } from "@/components/mode-toggle";
-
+import { Hero } from "@/components/hero"
 
 export default function Home() {
   return (
-    <div>
-    </div>
+    <main>
+      <Hero />
+      {/* <div>
+        Home
+      </div> */}
+    </main>
   );
 }

@@ -8,6 +8,19 @@ export const Header = () => {
       <div className="text-lg font-bold">
         <a href="/">Izaak Sarnecki</a>
       </div>
+
+      <nav className=" justify-between space-x-8 text-lg">
+        <a className="nav-link" href="/projects">
+          Projects
+        </a>
+        <a className="nav-link" href="/about">
+          About
+        </a>
+        <a className="nav-link" href="/contact">
+          Contact
+        </a>
+      </nav>
+
       <ModeToglge />
     </header>
   );
