@@ -1,11 +1,11 @@
 export const Hero = () => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen px-4 py-8">
+    <section id="hero" className="flex flex-col items-center justify-center min-h-screen px-4 py-8">
       <h1 className="text-5xl font-bold mb-2">
         Hi, I'm Izaak
       </h1>
       <p className="text-xl mb-4">
-        I build solutions with Next.js, React, and Node.js
+        I study computer science at the University of Bergen.
       </p>
       <a
         href="#projects"

@@ -15,9 +15,10 @@ export function ModeToglge() {
   return (
     <Button variant="outline" size="icon" onClick={toggleTheme}>
       {theme === "light" ? (
-        <Sun className="h-[1.2rem] w-[1.2rem] transition-all" />
-      ) : (
         <Moon className="h-[1.2rem] w-[1.2rem] transition-all" />
+      ) : (
+        <Sun className="h-[1.2rem] w-[1.2rem] transition-all" />
+
       )}
       <span className="sr-only">Toggle theme</span>
     </Button>

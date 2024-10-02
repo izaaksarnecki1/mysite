@@ -1,12 +1,11 @@
 import { Hero } from "@/components/hero"
+import { Projects } from "@/components/projects";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      {/* <div>
-        Home
-      </div> */}
+      <Projects />
     </main>
   );
 }
