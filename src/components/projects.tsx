@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type ProjectProps = {
@@ -38,12 +38,13 @@ const projects: ProjectProps[] = [
 export const Projects = () => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
-  const handleScroll = () => {
-    const aboutSection = document.getElementById("about");
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
+    if (selectedId != null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
     }
-  };
+  }, [selectedId]);
 
   return (
     <section
@@ -51,7 +52,7 @@ export const Projects = () => {
       className="flex flex-col items-center justify-center min-h-screen px-4 py-8"
     >
       <motion.h1
-        className="text-5xl font-bold mb-2"
+        className="text-5xl font-bold mb-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -63,9 +64,9 @@ export const Projects = () => {
           <motion.div
             key={project.id}
             layoutId={project.id.toString()}
-            className="p-4 border rounded-lg cursor-pointer"
+            className="bg-secondary p-4 rounded-lg cursor-pointer"
             onClick={() => setSelectedId(project.id)}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.1 }}
           >
             <motion.h5 className="text-xl">{project.subtitle}</motion.h5>
             <motion.h2 className="text-2xl font-bold">
@@ -79,7 +80,7 @@ export const Projects = () => {
         {selectedId && (
           <motion.div
             layoutId={selectedId.toString()}
-            className="fixed top-0 left-0 w-full h-full bg-gray-700 text-white flex items-center justify-center"
+            className="fixed top-0 left-0 w-full h-full bg-secondary flex items-center justify-center flex-col p-8 z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
