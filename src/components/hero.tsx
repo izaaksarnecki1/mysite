@@ -33,7 +33,7 @@ export const Hero = () => {
       </motion.p>
       <motion.button
         onClick={handleScroll}
-        className="px-4 py-2 text-lg bg-blue-600 text-white rounded-full hover:bg-blue-700"
+        className="px-4 py-2 rounded-full bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
