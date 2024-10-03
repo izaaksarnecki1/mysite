@@ -37,6 +37,7 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
+        whileHover={{ scale: 1.05 }}
       >
         View my Projects
       </motion.button>

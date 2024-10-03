@@ -96,7 +96,9 @@ export const Projects = () => {
             </motion.p>
             <motion.button
               onClick={() => setSelectedId(null)}
-              className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+              className="mt-4 px-4 py-2 rounded-full  bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))]"
+              transition={{ duration: 0.2 }}
+              whileHover={{ scale: 1.05 }}
             >
               Close
             </motion.button>
