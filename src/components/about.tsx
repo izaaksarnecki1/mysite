@@ -9,7 +9,7 @@ export const About = () => {
       heroSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-
+  
   return (
     <section
       id="about"
