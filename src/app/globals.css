@@ -41,33 +41,6 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-
-  .dark {
-    --background: 34 60% 15%; /* Warm dark brown */
-    /* --foreground: 220 10% 95%; Much darker text in dark mode */
-    --card: 34 60% 15%;
-    --card-foreground: 40 100% 94%;
-    --popover: 34 60% 15%;
-    --popover-foreground: 40 100% 94%;
-    --primary: 50 40% 65%; /* Warm muted yellow */
-    --primary-foreground: 40 100% 94%;
-    --secondary: 240 3.7% 25.9%; /* Muted blue accents */
-    --secondary-foreground: 40 100% 94%;
-    --muted: 240 3.7% 25.9%;
-    --muted-foreground: 50 40% 65%;
-    --accent: 50 40% 65%; /* Match primary in dark mode */
-    --accent-foreground: 40 100% 94%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 40 100% 94%;
-    --border: 34 40% 25%;
-    --input: 34 40% 25%;
-    --ring: 50 40% 65%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
 }
 
 @layer base {
