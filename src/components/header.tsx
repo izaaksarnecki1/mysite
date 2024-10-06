@@ -11,14 +11,14 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 shadow-md bg-inherit">
+    <header className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 shadow-md bg-inherit font-sans">
       <div
         className="text-lg md:text-2xl font-bold cursor-pointer"
         onClick={scrollToTop}
       >
         Izaak Sarnecki
       </div>
-      <ModeToglge />
+      {/* <ModeToglge /> */}
     </header>
   );
 };

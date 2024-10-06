@@ -29,7 +29,7 @@ export const About = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        About section
+        More to come!
       </motion.p>
       <motion.button
         onClick={handleScroll}

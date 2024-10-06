@@ -1,9 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 @layer utilities {
@@ -15,7 +16,7 @@ body {
 @layer base {
   :root {
     --background: 40 100% 94%; /* Light theme: #FFF8E7 */
-    --foreground: 107 15% 14%;; /* Dark text */
+    --foreground: 107 25% 10%; /* Darker text */
     --card: 40 100% 94%; /* Same as background */
     --card-foreground: 240 10% 3.9%;
     --popover: 40 100% 94%;
@@ -43,7 +44,7 @@ body {
 
   .dark {
     --background: 34 60% 15%; /* Warm dark brown */
-    --foreground: 220 15% 90%; /* Light text */
+    /* --foreground: 220 10% 95%; Much darker text in dark mode */
     --card: 34 60% 15%;
     --card-foreground: 40 100% 94%;
     --popover: 34 60% 15%;

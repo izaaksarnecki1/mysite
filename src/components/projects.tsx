@@ -1,37 +1,35 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; 
 
 type ProjectProps = {
   id: number;
   title: string;
-  subtitle: string;
   description: string;
-  link: string;
+  stack: string;
+  github: string;
+  website?: string;
+  image?: string;
 };
 
 const projects: ProjectProps[] = [
   {
     id: 1,
-    title: "Project 1",
-    subtitle: "Subtitle 1",
-    description: "Description 1",
-    link: "https://example.com",
+    title: "echo's website",
+    description: "Due to my participation in the voluntary group Webkom, I have contributed in the development of echo's website.",
+    stack: "NextJS, React, TypeScript, Postgresql DB, HTML, TailwindCSS, Vercel, Flyctl",
+    github: "https://github.com/echo-webkom/echo-web-mono",
+    website: "https://echo.uib.no",
+    image: "/resources/echo-website.jpg",
   },
   {
     id: 2,
-    title: "Project 2",
-    subtitle: "Subtitle 2",
-    description: "Description 2",
-    link: "https://example.com",
-  },
-  {
-    id: 3,
-    title: "Project 3",
-    subtitle: "Subtitle 3",
-    description: "Description 3",
-    link: "https://example.com",
+    title: "Workout Tracker",
+    description: "As part of my university class Object-Oriented programming, I developed a workout tracker in Java. The application uses a functional, yet very simple database. ",
+    stack: "Java, Java Swing AWT",
+    github: "https://github.com/izaaksarnecki1/WorkoutTracker",
   },
 ];
 
@@ -60,10 +58,7 @@ export const Projects = () => {
             onClick={() => setSelectedId(project.id)}
             whileHover={{ scale: 1.1 }}
           >
-            <motion.h5 className="text-xl font-medium">{project.subtitle}</motion.h5>
-            <motion.h2 className="text-2xl font-bold">
-              {project.title}
-            </motion.h2>
+            <motion.h2 className="text-2xl font-bold">{project.title}</motion.h2>
           </motion.div>
         ))}
       </div>
@@ -77,19 +72,56 @@ export const Projects = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <motion.h5>
-              {projects.find((p) => p.id === selectedId)?.subtitle}
-            </motion.h5>
             <motion.h2 className="text-3xl font-bold">
               {projects.find((p) => p.id === selectedId)?.title}
             </motion.h2>
-            <motion.p className="mt-4">
+
+            <motion.p className="mt-4 max-w-2xl w-3/5 text-justify">
               {projects.find((p) => p.id === selectedId)?.description}
             </motion.p>
+
+            {projects.find((p) => p.id === selectedId)?.image && (
+              <motion.img
+                src={projects.find((p) => p.id === selectedId)?.image}
+                alt={projects.find((p) => p.id === selectedId)?.title}
+                className="w-1/3 h-auto rounded-lg mt-4"
+              />
+            )}
+
+            <motion.p className="mt-4">
+              <strong>Stack:</strong>{" "}
+              {projects.find((p) => p.id === selectedId)?.stack}
+            </motion.p>
+
+            <div className="flex mt-6 space-x-4">
+              <motion.a
+                href={projects.find((p) => p.id === selectedId)?.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 px-4 py-2 rounded-full bg-black text-white hover:bg-gray-800"
+                whileHover={{ scale: 1.05 }}
+              >
+                <FaGithub />
+                <span>View on GitHub</span>
+              </motion.a>
+
+              {projects.find((p) => p.id === selectedId)?.website && (
+                <motion.a
+                  href={projects.find((p) => p.id === selectedId)?.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 px-4 py-2 rounded-full bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))]"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <FaExternalLinkAlt />
+                  <span>Visit Website</span>
+                </motion.a>
+              )}
+            </div>
+
             <motion.button
               onClick={() => setSelectedId(null)}
-              className="mt-4 px-4 py-2 rounded-full bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))]"
-              transition={{ duration: 0.2 }}
+              className="mt-6 px-4 py-2 rounded-full bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))]"
               whileHover={{ scale: 1.05 }}
             >
               Close
