@@ -21,7 +21,7 @@ export const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        Hi, I'm Izaak
+        Hi, I&apos;m Izaak
       </motion.h1>
       <motion.p
         className="text-xl mb-4"
@@ -39,7 +39,7 @@ export const Hero = () => {
         transition={{ duration: 0.6 }}
         whileHover={{ scale: 1.05 }}
       >
-        View my Projects
+        View my Projects&nbsp;
       </motion.button>
     </section>
   );

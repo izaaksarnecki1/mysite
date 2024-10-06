@@ -1,6 +1,6 @@
 "use client";
 
-import { ModeToglge } from "./mode-toggle";
+// import { ModeToglge } from "./mode-toggle";
 
 export const Header = () => {
   const scrollToTop = () => {
