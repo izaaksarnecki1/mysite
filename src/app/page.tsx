@@ -7,7 +7,7 @@ import { Projects } from "@/components/projects";
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative">
       <GradientBackground />
       <Particles />
       <Parallax />

@@ -38,18 +38,10 @@ const projects: ProjectProps[] = [
 export const Projects = () => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
-  useEffect(() => {
-    if (selectedId != null) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [selectedId]);
-
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center min-h-screen px-4 py-8"
+      className="flex flex-col items-center justify-center min-h-screen px-4 py-8 z-10"
     >
       <motion.h1
         className="text-5xl font-bold mb-6"
@@ -59,7 +51,7 @@ export const Projects = () => {
       >
         Projects
       </motion.h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 z-20">
         {projects.map((project) => (
           <motion.div
             key={project.id}
@@ -68,7 +60,7 @@ export const Projects = () => {
             onClick={() => setSelectedId(project.id)}
             whileHover={{ scale: 1.1 }}
           >
-            <motion.h5 className="text-xl">{project.subtitle}</motion.h5>
+            <motion.h5 className="text-xl font-medium">{project.subtitle}</motion.h5>
             <motion.h2 className="text-2xl font-bold">
               {project.title}
             </motion.h2>
@@ -96,7 +88,7 @@ export const Projects = () => {
             </motion.p>
             <motion.button
               onClick={() => setSelectedId(null)}
-              className="mt-4 px-4 py-2 rounded-full  bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))]"
+              className="mt-4 px-4 py-2 rounded-full bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))]"
               transition={{ duration: 0.2 }}
               whileHover={{ scale: 1.05 }}
             >
